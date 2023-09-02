@@ -1,20 +1,15 @@
 import '../models/quiz_questioin.dart';
 
 final questions = [
-  QuizQuestion("What are the main tough area in flutter?",
-      ["State Managment", "Api's Integration"]),
-  QuizQuestion("with help of the TextStyle constructor function,?",
-      ["State Managment", "Api's Integration"]),
-  QuizQuestion("and set this to a color of white, like thi?",
-      ["State Managment", "Api's Integration"]),
-  QuizQuestion("But for the buttons here, I now want to make surer?",
-      ["State Managment", "Api's Integration"]),
-  QuizQuestion("What are the main tough area in flutter?",
-      ["State Managment", "Api's Integration"]),
-  QuizQuestion("with help of the TextStyle constructor function,?",
-      ["State Managment", "Api's Integration"]),
-  QuizQuestion("and set this to a color of white, like thi?",
-      ["State Managment", "Api's Integration"]),
-  QuizQuestion("But for the buttons here, I now want to make surer?",
-      ["State Managment", "Api's Integration"]),
+  QuizQuestion("What is the capital of France?", ["Paris", "London", "Berlin"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
 ];
+
+
+// class QuizQuestion {
+//   QuizQuestion(this.text, this.quizAnswer);
+
+//   final String text;
+
+//   final List<String> quizAnswer;
+// }
