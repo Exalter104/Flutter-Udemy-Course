@@ -15,7 +15,7 @@ class QuizButtons extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-            backgroundColor: Colors.deepOrange,
+            backgroundColor: buttonColor,
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40))),
