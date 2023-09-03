@@ -3,6 +3,22 @@ import '../models/quiz_questioin.dart';
 final questions = [
   QuizQuestion("What is the capital of France?", ["Paris", "London", "Berlin"]),
   QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is the capital of France?", ["Paris", "London", "Berlin"]),
+  QuizQuestion("What is the capital of France?", ["Paris", "London", "Berlin"]),
+  QuizQuestion("What is the capital of France?", ["Paris", "London", "Berlin"]),
+  QuizQuestion("What is the capital of France?", ["Paris", "London", "Berlin"]),
+  QuizQuestion("What is the capital of France?", ["Paris", "London", "Berlin"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
+  QuizQuestion("What is 2 + 2?", ["3", "4", "5"]),
 ];
 
 
