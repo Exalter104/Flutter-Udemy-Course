@@ -18,11 +18,11 @@ class QuizButtons extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               backgroundColor: buttonColor,
-              foregroundColor: Colors.white,
+              foregroundColor: const Color.fromARGB(255, 187, 186, 188),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40))),
           onPressed: onPress,
-          child: Text(text)),
+          child: Text(text, textAlign: TextAlign.center)),
     );
   }
 }
