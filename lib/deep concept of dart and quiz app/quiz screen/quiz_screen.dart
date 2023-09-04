@@ -88,7 +88,6 @@ class QuizScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     child: ListView(
                       children: questions.asMap().entries.map((entry) {
-                        final index = entry.key;
                         final question = entry.value;
 
                         return QuestionResultWidget(
