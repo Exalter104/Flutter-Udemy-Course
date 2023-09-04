@@ -1,39 +1,59 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:udemycourse/deep%20concept%20of%20dart%20and%20quiz%20app/data/questions.dart';
 
+import 'quiz_screen.dart';
 import 'quiz_screen_comp.dart';
 
 class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({
-    super.key,
-  });
+  const QuestionScreen({Key? key}) : super(key: key);
 
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
-  var changeQuestionIndex = 0;
+  var changeQuestionIndex = 0; //  2:   ...change the questions
+  List<String> selectedAnswers =
+      []; //  3:   ...Define the list to store selected answers
+  int totalQuestions = questions.length; //  1:   ...Its a question length
 
-  void changeQuestIndex() {
-    setState(() {
-      changeQuestionIndex += 1;
-    });
+//  4:   ... check the selected answer to the total number of questions
+  bool allQuestionsAnswered() {
+    // Assuming you have a total number of questions
+    return selectedAnswers.length >= totalQuestions;
   }
 
-//... its for understanding of spread operator
-  // @override
-  // void initState() {
-  //   List<int> list1 = [1, 2, 3];
-  //   List<int> list2 = [4, 5, ...list1, 6, 7];
-  //   print(list2);
-  //   setState(() {
-  //     print(list2);
-  //   });
+  void onSelectedAnswer(String answer) {
+    //  5:   ...Add the selected answer to the list
+    selectedAnswers.add(answer);
+    if (kDebugMode) {
+      print('Answer selected in QuestionScreen: $answer');
+    }
+  }
 
-  //   super.initState();
-  // }
+  void questIndexMethod(String selectAnswer) {
+    if (changeQuestionIndex < totalQuestions - 1) {
+      onSelectedAnswer("what they do: $selectAnswer");
+      setState(() {
+        changeQuestionIndex += 1;
+      });
+    } else {
+      // You've answered all questions, navigate to the QuizScreen
+      void _navigateToQuizScreen(
+          BuildContext context, List<String> selectedAnswers) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => QuizScreen(
+              questions: questions, // Pass your list of questions
+            ),
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,11 +92,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
               ...currentQuestion.getShuffledAnswers().map((read) {
                 return QuizButtons(
-                    onPress: () {
-                      changeQuestIndex();
-                    },
-                    text: read,
-                    buttonColor: const Color.fromARGB(255, 61, 7, 75));
+                  text: read,
+                  buttonColor: const Color.fromARGB(255, 61, 7, 75),
+                  onPress: () {
+                    questIndexMethod(read);
+                  },
+                );
               }),
             ],
           ),
